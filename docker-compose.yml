@@ -1,0 +1,14 @@
+version: '3'
+services:
+  meraki_down_detector:
+    build: .
+    container_name: meraki_down_detector
+    restart: unless-stopped
+    environment:
+      - MERAKI_API_KEY=${MERAKI_API_KEY}
+      - MERAKI_ORG_ID=${MERAKI_ORG_ID}
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - AZURE_SUBSCRIPTION_ID=${AZURE_SUBSCRIPTION_ID}
+      - AZURE_RESOURCE_GROUP=${AZURE_RESOURCE_GROUP}
